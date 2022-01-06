@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE INFLUENCER</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="con">
+        <h1>THE INFLUENCER</h1>
+        <div class="col">
+            <div class="thumnale">
+                <img src="img/pic1.jpg" alt="the influcere" width="100%">
+                <img src="img/play.png" class="play-btn" onclick="playVideo('vid/Doc.mp4')">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, voluptatum accusamus dolore aperiam unde iusto rerum. Explicabo, aperiam maiores. Sapiente!
+            </p>
+        </div>
+    </div>
+    <div class="video" id="videoPlayer">
+        <video width="100%" controls  id="myVideo">
+            <source src="vid/Doc.mp4" type="video/mp4">
+        </video>
+        <img src="img/close.png" class="close-btn" onclick="stopVideo()">
+    </div>
+    <script>
+        var videoPlayer = document.getElementById("videoPlayer");
+        var myVideo = document.getElementById("myVideo");
+
+        function stopVideo(){
+            videoPlayer.style.display ="none";
+            myVideo.pause();
+            /*myVideo.currentTime = 0;*/
+        }
+        
+        function playVideo(file){
+            myVideo.src = file;
+            videoPlayer.style.display = "block"
+        }
+
+    </script>
+<div class="audio">
+  <div class="a1">
+      <a href="test/index.html"> <img src="img/audio.png"> Audio</a>
+  </div>
+  
+</div>
+    <div class="hr">
+        <button class="open-button" onclick="openForm()">View team members</button>
+        <div class="form-popup" id="myForm">
+          <form class="form-container">
+            <h1>Group Members</h1>
+            <table>
+              <tr>
+                <td>
+                  <h3>Name</h3>
+                </td>
+                <td>
+                  <h3>ID</h3>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <b>Eyob Fentaw<b>
+                </td>
+                <td>
+                  <b>UGR/17080/11<b>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  <b>Amanuel Abebe<b>
+                </td>
+                <td>
+                  <b>UGR/16753/11<b>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  <b>Mekdem Alemu<b>
+                </td>
+                <td>
+                  <b>UGR/17350/11<b>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  <b>Eyob Birhanemeskel<b>
+                </td>
+                <td>
+                  <b>UGR/17079/11<b>
+                </td>
+              </tr>
+            </table>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          </form>
+        </div>
+    </div>
+    <script>
+
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+  
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+      </script>
+      
+</body>
+</html>
